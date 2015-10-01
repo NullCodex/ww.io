@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Game View</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../public/css/main.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+</head>
+<body data-role="page">
+    <nav class="navbar navbar-inverse">
+        <p class="navbar-brand">Global Warfare</p>
+    </nav>
+    <div class="container">
+        <form id="nameForm">
+            <div class="form-group">
+                <label for="nameInput">Enter your Name: </label>
+                <input type="fname" class="form-control" id="fname" placeholder="Name">
+            </div>
+            <button type="submit" class="btn btn-default">Enter</button>
+        </form>
+        <span></span>
+    </div>
+</body>
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+<script src="https://cdn.socket.io/socket.io-1.3.5.js"></script>
+<script>
+    socket = io();
+    $("button.button1").on("tap", function() {
+        socket.emit('zap', { data: 'worldmap' });
+        console.log("should have zapped");
+    });
+    $("#nameForm").submit(function(event) {
+        if ( $( "input:first" ).val() !== "" ) {
+            console.log($("input:first").val());
+            socket.emit('playerentry', {data: $("input:first").val()});
+        }
+        else {
+            console.log("No name");
+            $( "span" ).text("Enter a name").show();
+        }
+        event.preventDefault();
+    });
+    socket.on('zapper', function(response) {
+    });
+</script>
+</html>
