@@ -3,7 +3,7 @@
 
 var express = require('express');
 
-module.export = function(app, io, db) {
+module.exports = function(app, io, db) {
     // Set .html as the default template extension
     app.set('view engine', 'html');
 
