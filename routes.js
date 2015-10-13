@@ -6,7 +6,7 @@ module.exports = function(app, io, db) {
 
     app.get('/', function (req, res) {
         res.render('main');
-        db.collection("test").insert(
+        db.collection("war").insert(
             {
                 playername: "",
                 territories:[],

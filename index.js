@@ -2,8 +2,8 @@ require('newrelic');
 var app = require('express')();
 var mongodb = require('mongodb');
 var port = process.env.PORT || 8080;
-var uri = process.env.MONGOLAB_URI;
 
+var uri = process.env.NODE_ENV ? 'mongodb://localhost:27017/local' : process.env.MONGOLAB_URI;
 mongodb.connect(uri, {server: {auto_reconnect: true}}, function(err, db) {
   if(err) {
     alert("Database could not load!");
