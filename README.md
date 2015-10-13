@@ -13,31 +13,17 @@ For error checking use 'heroku logs'
 To install local mongodb follow the instruction in this video:
 https://www.youtube.com/watch?v=AhMdrlgI0Bc
 
-To use the local mongodb use the following code:
+To use local database for testing perform the following:
 
-//lets require/import the mongodb native drivers.
-var mongodb = require('mongodb');
+In the terminal set the environment variable:
 
-//We need to work with "MongoClient" interface in order to connect to a mongodb server.
-var MongoClient = mongodb.MongoClient;
+  heroku config:set NODE_ENV=local
 
-// Connection URL. This is where your mongodb server is running.
-var url = 'mongodb://localhost:27017/my_database_name';
+In addition change the following line:
+'mongodb://localhost:27017/local'
 
-// Use connect method to connect to the Server
-MongoClient.connect(url, function (err, db) {
-  if (err) {
-    console.log('Unable to connect to the mongoDB server. Error:', err);
-  } else {
-    //HURRAY!! We are connected. :)
-    console.log('Connection established to', url);
+To be:
+'mongodb://localhost:27017/your_database_here'
 
-    // do some work here with the database.
-
-    //Close connection
-    db.close();
-  }
-});
-    db.close();
-  }
-});
+Make sure to unset the heroku config before commiting to do so:
+  heroku config:unset NODE_ENV
