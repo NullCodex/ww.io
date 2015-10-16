@@ -19,7 +19,7 @@ In the terminal set the environment variable:
 
   heroku config:set NODE_ENV=local
 
-In addition change the following line:
+In addition change the following line in index.js:
 'mongodb://localhost:27017/local'
 
 To be:
