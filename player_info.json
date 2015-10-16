@@ -1,0 +1,34 @@
+{
+    playerName: "player1",
+    territories: [
+        {
+            countryName: "China",
+            soldiers: 2,
+            tanks: 3
+        },
+        {
+            countryName: "Canada",
+            soldiers: 1,
+            tanks: 1
+        }
+
+    ]
+}
+
+
+{
+    playerName: "player2",
+    territories: [
+        {
+            countryName: "Japan",
+            soldiers: 2,
+            tanks: 3
+        },
+        {
+            countryName: "France",
+            soldiers: 1,
+            tanks: 1
+        }
+
+    ]
+}
