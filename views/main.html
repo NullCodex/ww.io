@@ -6,13 +6,20 @@
     <title>Game View</title>
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="../public/css/main.css">
+    <link rel="stylesheet" href="../jvectormap/jquery-jvectormap.css" type="text/css" media="screen"/>
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
     <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+    
+    <script src="../public/js/jquery.js"></script>
+    <script src="http://jvectormap.com/js/jquery-jvectormap-2.0.1.min.js"></script>
+    <script src="http://jvectormap.com/js/jquery-jvectormap-world-mill.js"></script>
+    <script src="../jvectormap/jquery-jvectormap.js"></script>
 </head>
 <body data-role="page">
     <nav class="navbar navbar-inverse">
-        <p class="navbar-brand">Global Warfare</p>
+        <p class="navbar-brand">World War.IO</p>
     </nav>
     <div class="container">
         <form id="nameForm">
@@ -24,11 +31,18 @@
         </form>
         <span></span>
     </div>
+    <div id="world-map" style="width: 800px; height: 600px"></div>
+    <script>
+        $(function(){
+            $('#world-map').vectorMap({map: 'world_mill'});
+        });
+    </script>
 </body>
 <!-- Latest compiled and minified JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 <script src="https://cdn.socket.io/socket.io-1.3.5.js"></script>
 <script>
+    /*
     socket = io();
     $("button.button1").on("tap", function() {
         socket.emit('zap', { data: 'worldmap' });
@@ -47,5 +61,6 @@
     });
     socket.on('zapper', function(response) {
     });
+    */
 </script>
 </html>
