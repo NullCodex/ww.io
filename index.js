@@ -5,7 +5,7 @@ var port = process.env.PORT || 8080;
 
 const db = 'test'
 
-var uri = process.env.NODE_ENV === 'local' ? 'mongodb://localhost:27017/'+db : process.env.MONGOLAB_URI;
+var uri = process.env.NODE_ENV === 'local' ? 'mongodb://localhost:27017/'+ db : process.env.MONGOLAB_URI;
 mongodb.connect(uri, {server: {auto_reconnect: true}}, function(err, db) {
   if(err) {
     alert("Database could not load!");

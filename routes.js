@@ -5,15 +5,7 @@
 module.exports = function(app, io, db) {
 
     app.get('/', function (req, res) {
-        res.render('main');
-        db.collection("war").insert(
-            {
-                playername: "",
-                territories:[],
-                cards: []
-
-            }
-        );
+        res.render('login');
 
     });
 
