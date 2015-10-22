@@ -1,7 +1,7 @@
 (function() {
-    $('form > input').keyup(function() {
+    $('#nameForm').keyup(function() {
         var empty = false;
-        $('form > input').each(function() {
+        $('#nameForm > input').each(function() {
             if ($(this).val() == '') {
                 empty = true;
             }
