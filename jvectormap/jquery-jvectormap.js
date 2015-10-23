@@ -3,9 +3,12 @@
  *
  * Copyright 2011-2014, Kirill Lebedev
  *
+
+ THIS SHOULD WORK
  */
 
 (function( $ ){
+  console.log('welcome to jvectormap')
   var apiParams = {
         set: {
           colors: 1,
