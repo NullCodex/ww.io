@@ -6,4 +6,4 @@ $(document).ready(function(){
 	document.getElementById("map_button").addEventListener(
 		"click", showMap()
 	);
-}
+})
