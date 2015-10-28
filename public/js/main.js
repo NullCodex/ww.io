@@ -4,4 +4,4 @@ function showMap() {
 
 document.getElementById("map_button").addEventListener(
 	"click", showMap()
-});
+);
