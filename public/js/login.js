@@ -1,16 +1,17 @@
 (function() {
-    $('#nameForm').keyup(function() {
-        var empty = false;
-        $('#nameForm > input').each(function() {
-            if ($(this).val() == '') {
-                empty = true;
+
+    function Init() {
+
+        $('#playerName').keyup(function() {
+            if ($('#playerName').val().length == 0) {
+                $('#submit_button').attr('disabled', 'disabled');
+            } else {
+                $('#submit_button').removeAttr('disabled');
             }
         });
+    }
 
-        if (empty) {
-            $('#submit_button').attr('disabled', 'disabled');
-        } else {
-            $('#submit_button').removeAttr('disabled');
-        }
-    });
+    $(Init);
+
+
 })()

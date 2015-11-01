@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
     <link rel="stylesheet" href="../css/login.css">
     <link rel="stylesheet" href="../jvectormap/jquery-jvectormap.css" type="text/css" media="screen"/>
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.0/jquery.mobile-1.0.min.css" />
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
     <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
@@ -17,47 +18,18 @@
     <script src="http://jvectormap.com/js/jquery-jvectormap-world-mill.js"></script>
     <script src="../jvectormap/jquery-jvectormap.js"></script>
     <script src="../js/login.js"></script>
-    <script src="../js/main.js"></script>
 </head>
 <body data-role="page">
-    <nav class="navbar navbar-inverse">
-        <p class="navbar-brand">World War.IO</p>
-    </nav>
-    <div class="container">
-        <form id="nameForm">
-            <div class="form-group">
-                <label for="nameInput">Enter your Name: </label>
-                <input type="fname" class="form-control" id="fname" placeholder="Name">
-            </div>
-            <button type="submit" class="btn btn-default" id="submit_button" disabled>Enter</button>
+    <form id="nameForm" action = "/adduser" method = "post" name = "adduser">
+        <div class="form-group">
+            <label for="nameInput">Enter your Name: </label>
+            <input type="fname" class="form-control" id="playerName" placeholder="Name" name = "playerName">
+        </div>
+        <button type="submit" class="btn btn-default" id="submit_button" disabled>Enter</button>
         </form>
-        <span></span>
-        <button type="submit" class="btn btn-default" id="map_button">View Map</button>
-    </div>
 </body>
 <!-- Latest compiled and minified JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 <script src="https://cdn.socket.io/socket.io-1.3.5.js"></script>
-<script>
-    /*
-    socket = io();
-    $("button.button1").on("tap", function() {
-        socket.emit('zap', { data: 'worldmap' });
-        console.log("should have zapped");
-    });
-    $("#nameForm").submit(function(event) {
-        if ( $( "input:first" ).val() !== "" ) {
-            console.log($("input:first").val());
-            socket.emit('playerentry', {data: $("input:first").val()});
-        }
-        else {
-            console.log("No name");
-            $( "span" ).text("Enter a name").show();
-        }
-        event.preventDefault();
-    });
-    socket.on('zapper', function(response) {
-    });
-    */
-</script>
+
 </html>
