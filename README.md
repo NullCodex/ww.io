@@ -1,4 +1,4 @@
-The app is currently hosted on http://calm-earth-7787.herokuapp.com/main
+The app is currently hosted on http://calm-earth-7787.herokuapp.com/
 
 For setup need heroku tool-belt
 
