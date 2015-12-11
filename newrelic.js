@@ -8,7 +8,7 @@ exports.config = {
   /**
    * Array of application names.
    */
-  app_name: ['calm-earth-7787'],
+  app_name: ['ww-io'],
   /**
    * Your New Relic license key.
    */
